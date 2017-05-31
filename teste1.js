@@ -69,3 +69,28 @@ console.log('Balance : ' + web3.eth.getBalance(web3.eth.defaultAccount));
 web3.eth.getBlock('latest', function t(error, result){
     console.log('Ultimo Bloco : ' + result.number);
 });
+
+
+// Como parametro voce deve informar o endereco da sua conta
+console.log('Balance da account WALLET1 ' + web3.eth.getBalance('0xfAFCBB32d92255a5Caf15B9f72cD01328b4aEA9A').toNumber());
+console.log('Balance da account MINHACONTA ' +web3.eth.getBalance('0x0030f70e9bF83b4d6cE69476501f4E024D449f6A').toNumber());
+console.log('Balance da account ALEX ' +web3.eth.getBalance('0x009761303A662654c87e3F9eca3Fe34cB851f662').toNumber());
+
+var bloco = web3.eth.getBlock(1807739);
+console.log('Número : ' + bloco.number);
+console.log('Dificuldade : ' + bloco.totalDifficulty);
+console.log('Extra Data : ' + bloco.extraData);
+console.log('Size : ' + bloco.size);
+console.log('Timestamp : ' + bloco.timestamp);
+console.log('Transactions : ' + bloco.transactions);
+console.log('Uncles : ' + bloco.uncles);
+console.log('Nonce : ' + bloco.nonce);
+console.log('GasLimit : ' + bloco.gasLimit);
+console.log('GasUsed : ' + bloco.gasUsed);
+
+var number = web3.eth.getBlockTransactionCount(bloco.number);
+var number2 = web3.eth.getBlockTransactionCount('latest');
+
+console.log('Total de transações do Bloco : ' + bloco.number + ' ' + number + ' - ' + number2);
+
+
